@@ -55,7 +55,7 @@ async def on_voice_state_update(member, before, after):
         for member in channel.members:
             mem_count = mem_count + 1
         after = mem_count
-        if before == 0 and after != 0:
+        if after != 0 and len(vch_stat_mem) == iteration + 1:
             await channel.clone()
         if before != 0 and after == 0 and i != vc_main:
             await channel.delete()
